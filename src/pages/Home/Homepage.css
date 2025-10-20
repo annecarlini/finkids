@@ -1,0 +1,126 @@
+/* Importando font pelo google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Yusei+Magic&display=swap');
+
+body {
+    margin: 0;
+}
+
+.home {
+    background-color: #f4e0c9;
+}
+
+.home_description {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 0px;
+    padding: 20px;
+}
+
+.home_description h1 {
+    font-size: 40px;
+    font-family: "Yusei Magic", sans-serif;
+    color: #e97e34;
+    text-align: center;
+    width: 100%;
+    margin: 15px;
+}
+
+/* container pai do texto + imagem */
+.home_content {
+    width: 100%;
+    height: ;
+    display: flex;
+    justify-content: space-between;  /* ou space-between / flex-start */
+    align-items: center;
+    flex-direction: row;  
+    padding: 0 40px; /* padding no lugar da margin */
+    box-sizing: border-box; /* garante que o padding seja contado dentro da largura */
+}
+
+
+
+/* texto */
+.home_subtitle {
+    font-size: 30px;
+    font-family: "Yusei Magic", sans-serif;
+    color: #E97E34;
+    text-align: left;
+    width: 420px;
+    margin: 20;          /* Remove margens externas */
+
+}
+
+.home_subtitle h2 {
+    margin: 0;
+    padding: 0;
+    margin: 15px;
+}
+
+.home_subtitle h3 {
+    margin: 0;
+    padding: 0;
+    margin: 15px;
+}
+
+/* imagem */
+.img_frontpage img {
+
+    height: 500px;
+    width: auto;
+    align-items: block;
+}
+
+.img_frontpage img:hover {
+    transform: scale(1.02);
+}
+
+.card1, .card2, .card3, .card4 {
+    width: 340px;
+    height: 400px; /* mantém a altura fixa */
+    background-color: #187E9B;
+    padding: 30px 30px 30px 30px;
+    border-radius: 25px;
+    box-shadow: -8px 5px 10px rgba(74, 74, 74, 0.5);
+
+    display: flex;
+    flex-direction: column;       /* empilha o conteúdo verticalmente */
+    justify-content: space-between; /* empurra o botão pro fim do card */
+}
+.card1:hover, .card2:hover, .card3:hover, .card4:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+
+}
+
+.content-card {
+    padding: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+
+.card-tittle  h2{
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    font-family: "Yusei Magic", sans-serif;
+    color: #E97E34;
+    padding-top: 30px;
+}
+
+.card1 p, .card2 p, .card3 p, .card4 p {
+    text-align: justify;
+    line-height: 1.5; /* deixa a leitura mais confortável */
+    margin: 0;        /* remove margens extras */
+    font-size: 22px;
+    color: #eaeaea;
+}
+
+.card1 h3, .card2 h3, .card3 h3, .card4 h3 {
+    font-size: 30px;
+    color: #e97e34;
+}

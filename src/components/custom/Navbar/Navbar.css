@@ -1,0 +1,38 @@
+.main-navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* logo à esquerda, links à direita */
+    width: 100%;
+    height: 60px;
+    background-color: #187E9B;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    padding: 0 40px; /* margem lateral */
+}
+
+.main-navbar:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.main-navbar .imagem img {
+    width: 40px; /* imagem pequena */
+    height: auto;
+}
+
+.main-navbar .titles {
+    display: flex;
+    align-items: center;
+    gap: 300px; /* espaço entre os links */
+}
+
+.main-navbar p {
+    font-family: "Yusei Magic", sans-serif;
+    font-size: 20px;
+    color: #eaeaea;
+    cursor: pointer;
+}
+
+.main-navbar p:hover {
+    border-bottom: 2px solid #e97e34;
+    transform: scale(1.02);
+}
