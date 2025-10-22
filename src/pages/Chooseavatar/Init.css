@@ -8,27 +8,96 @@ body {
 .init-page {
   background-color: #F4E0C9;
   display: flex;
-  position: relative; /* container de referência */
   height: 100vh;
   overflow: hidden; /* evita scroll indesejado */
 }
-.introduction {
+
+.main-introduction {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: center;
 }
 
+.main-introduction h1{
+    font-family: "Yusei Magic", sans-serif;
+    font-size: 2rem;
+    color: #E97E34;
+}
+
+.main-introduction h2 {
+    font-family: "Yusei Magic", sans-serif;
+    font-size: 1.5rem;
+    color: #E97E34;
+}
 .card {
-    padding: 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
+    padding-top: 2rem;
 }
 
 .content-card {
+    position: relative; /* necessário para posicionar filhos absolutos */
     width: 64rem;
-    height: 30rem;
-    border-radius: 3rem;
+    height: 20rem;
+    border-radius: 2rem;
     background-color: #187E9B;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* texto no topo */
+    align-items: center;
+    overflow: hidden;
+
+}
+
+.content-card h3 {
+    font-family: "Yusei Magic", sans-serif;
+    font-size: 1.5rem;
+    color: #F4E0C9;
+    text-align: center;
+    margin: 0;
+
+}
+
+.content-card .images {
+    position: absolute; /* fixa na base */
+    bottom: 0; /* 👈 cola na base do retângulo */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 3rem; /* espaço entre bonecos */
+    width: 100%;
+    padding-bottom: 0rem; /* pequeno respiro da borda */
+}
+
+.content-card .images img {
+    height: 12rem;
+    object-fit: contain;
+}
+
+.content-card .images img:hover {
+    transform: scale(1.02);
+    cursor: pointer;
+
+}
+
+.first {
+    display: flex;
+    flex-direction: column;
+    padding-top: 2rem;
+    margin-left: 11rem;
+}
+
+.presentation-nina, .presentation-leo, .presentation-duda {
+    width: 64rem;
+    height: 12rem;
+    background-color: #E97E34;
+    margin-top: 1rem;
+    padding: 2rem;
+    border-radius: 2rem;
 }
 

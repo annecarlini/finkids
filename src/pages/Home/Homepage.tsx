@@ -34,7 +34,7 @@ function Homepage() {
       <div className="card-tittle">
           <h2>Como funciona a plataforma?</h2>
       </div>
-      <div className="content-card">
+      <div className="instruction">
         <div className="card1">
           <h3>1</h3>
           <p>Antes de sair gastando por aí, você vai entender como o dinheiro funciona. O que é mesada? Como fazer um orçamento? O que significa economizar? Tudo explicado com exemplos do seu dia a dia.</p>

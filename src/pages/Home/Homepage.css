@@ -30,7 +30,7 @@ body {
 /* container pai do texto + imagem */
 .home_content {
     width: 100%;
-    height: ;
+    height: 80% ;
     display: flex;
     justify-content: space-between;  /* ou space-between / flex-start */
     align-items: center;
@@ -38,8 +38,6 @@ body {
     padding: 0 40px; /* padding no lugar da margin */
     box-sizing: border-box; /* garante que o padding seja contado dentro da largura */
 }
-
-
 
 /* texto */
 .home_subtitle {
@@ -83,11 +81,11 @@ body {
     padding: 30px 30px 30px 30px;
     border-radius: 25px;
     box-shadow: -8px 5px 10px rgba(74, 74, 74, 0.5);
-
     display: flex;
     flex-direction: column;       /* empilha o conteúdo verticalmente */
     justify-content: space-between; /* empurra o botão pro fim do card */
 }
+
 .card1:hover, .card2:hover, .card3:hover, .card4:hover {
     transform: scale(1.03);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
@@ -95,13 +93,14 @@ body {
 }
 
 .content-card {
-    padding: 40px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
+    justify-content: space-between;  /* cria o "space-between" entre os cards */
+    align-items: stretch;             /* todos os cards com a mesma altura */
+    flex-wrap: nowrap;                /* impede quebra de linha */
+    gap: 40px;                        /* adiciona espaçamento fixo entre eles */
+    padding: 40px 60px;
+    box-sizing: border-box;
 }
-
 
 .card-tittle  h2{
     font-size: 40px;
@@ -123,4 +122,13 @@ body {
 .card1 h3, .card2 h3, .card3 h3, .card4 h3 {
     font-size: 30px;
     color: #e97e34;
+    width: 340px;
+    height: 400px;
+}
+
+.instruction {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 4rem;
 }
