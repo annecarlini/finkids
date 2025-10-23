@@ -101,3 +101,9 @@ body {
     border-radius: 2rem;
 }
 
+.card-progress1 h3 {
+    font-family: "Yusei Magic", sans-serif;
+    font-size: 1rem;
+    padding: 2rem;
+    color: #F4E0C9;
+}

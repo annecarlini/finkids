@@ -5,9 +5,57 @@ body {
     margin: 0;
 }
 
-.init-page {
+.main-page {
   background-color: #F4E0C9;
   display: flex;
+  flex-direction: column;
   height: 100vh;
   overflow: hidden; /* evita scroll indesejado */
+}
+
+.trail {
+  display: flex;
+  flex-direction: column;
+  margin-left: 21rem;
+  padding-top: 3rem;
+}
+
+.trail h1 {
+  font-family: "Yusei Magic", sans-serif;
+  font-size: 2rem;
+  color: #E97E34;
+}
+
+.phases {
+  display: flex;
+  flex-direction: row;
+  margin-left: 20rem;
+  padding-top: 1rem;
+}
+
+.phases h3 {
+  font-family: "Yusei Magic", sans-serif;
+  font-size: 1rem;
+  padding: 1rem ;
+  color: #e97e34;
+
+}
+
+.card-progress1 {
+  width: 50rem;
+  height: 15rem;
+  background-color: #187E9B;
+  margin-left: 21rem;
+  border-radius: 2rem;
+}
+
+.card-progress1 h2 {
+  font-family: "Yusei Magic", sans-serif;
+  font-size: 1rem;
+  padding: 2rem;
+  color:#F4E0C9;
+}
+
+.phases h3 {
+    cursor: pointer
 }

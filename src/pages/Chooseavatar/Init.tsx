@@ -55,6 +55,7 @@ function Init() {
         </div>
         {activateAvatar === "Nina" && ( // se showPresentation for true o react mostra a div, se for false ele não renderiza e não mostra.
           <div className="presentation-nina">
+    
             <h3>Oi, eu sou a Nina Cálculo! <br />
             Eu gosto de entender como funciona o dinheiro. Faço contas, analiso o que entra e o que sai, e sempre tento equilibrar tudo.
             </h3>
@@ -86,3 +87,4 @@ function Init() {
 }
 
 export default Init
+
