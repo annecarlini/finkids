@@ -17,7 +17,6 @@ import {
 import { NavMain } from "@/components/nav-main"
 import { NavProjects } from "@/components/nav-projects"
 import { NavSecondary } from "@/components/nav-secondary"
-import { NavUser } from "@/components/nav-user"
 import {
   Sidebar,
   SidebarContent,
@@ -27,6 +26,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
+import { UserProviderNav } from "@/components/UserProviderNav"
 
 const data = {
   user: {
@@ -178,7 +178,8 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <NavSecondary items={data.navSecondary} className="mt-auto" />
       </SidebarContent>
       <SidebarFooter>
-        <NavUser user={data.user} />
+        {/* Rodapé de usuário sempre visível, com loader/fallback se necessário */}
+        <UserProviderNav />
       </SidebarFooter>
     </Sidebar>
   )

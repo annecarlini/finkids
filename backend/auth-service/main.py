@@ -76,6 +76,26 @@ async def register(request: RegisterRequest):
 
     return result.data
 
+
+@app.post("/auth/avatar")
+async def set_avatar(payload: dict):
+    # Atualiza avatar do usuário (recebe { token, avatar })
+    token = payload.get('token') if isinstance(payload, dict) else None
+    avatar = payload.get('avatar') if isinstance(payload, dict) else None
+
+    if not token or not avatar:
+        raise HTTPException(status_code=400, detail="token e avatar são obrigatórios")
+
+    user_data = await auth_service.validate_token(token)
+    if not user_data:
+        raise HTTPException(status_code=401, detail="Token inválido")
+
+    result = await auth_service.update(user_data['user_id'], { 'avatar': avatar })
+    if not result.success:
+        raise HTTPException(status_code=400, detail=result.error)
+
+    return { 'success': True, 'user': result.data, 'message': 'Avatar atualizado' }
+
 @app.post("/auth/logout")
 async def logout(token: str):
     #Logout do usuário

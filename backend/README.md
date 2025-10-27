@@ -1,3 +1,56 @@
+# Backend (auth-service) - Instruções rápidas
+
+Este README contém passos rápidos para desenvolvedores iniciarem o serviço de autenticação localmente em Windows (PowerShell).
+
+Requisitos
+- Python 3.10+ instalado (com `py` ou `python` no PATH)
+
+Modo recomendado (helper):
+
+Abra PowerShell na raiz do repositório e execute:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\dev-backend.ps1
+```
+
+Isso criará `.venv` (se necessário), instalará dependências e iniciará o servidor Uvicorn em `http://localhost:8000` com reload.
+
+Modo de verificação (não inicia servidor):
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\dev-backend.ps1 -CheckOnly
+```
+
+Passos manuais (alternativa):
+
+```powershell
+# Criar virtualenv
+py -3 -m venv .venv
+# ou
+python -m venv .venv
+
+# Usar o python do venv para instalar deps
+.\.venv\Scripts\python.exe -m pip install --upgrade pip
+.\.venv\Scripts\python.exe -m pip install -r backend\auth-service\requirements.txt
+
+# Iniciar o servidor (a partir da raiz do repo)
+Set-Location backend\auth-service
+..\..\.venv\Scripts\python.exe -m uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+```
+
+Problemas comuns
+- Se aparecer erro sobre `email-validator`/`EmailStr`, verá ImportError. Foi adicionada `email-validator` em `requirements.txt` para evitar isso — instale com pip como acima.
+- Se receber erro "execution of scripts is disabled", use o prefixo `-ExecutionPolicy Bypass` (já presente no helper) ou rode:
+
+```powershell
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
+
+Verificação rápida
+- Abra `http://localhost:8000/docs` para a Swagger UI.
+
+Contato
+- Se algo falhar, copie/cole o erro do terminal e abra uma issue no repositório ou envie para o time de backend.
 # FInKids Backend - Auth Service
 
 Microsserviço de autenticação focado no **login** do FInKids.
