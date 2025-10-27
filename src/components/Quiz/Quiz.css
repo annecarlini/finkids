@@ -1,0 +1,62 @@
+.quiz-question {
+  font-family: "Yusei Magic", sans-serif;
+  font-size: 1.2rem;
+  color: #F4E0C9;
+  margin-bottom: 1.5rem;
+}
+
+.quiz-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.quiz-option {
+  font-family: "Yusei Magic", sans-serif;
+  color: #1f1f1f;
+  background-color: #eaeaeae3;
+  border: 2px solid #187e9b;
+  border-radius: 1rem;
+  padding: 0.75rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.quiz-option:hover {
+  background-color: #eaf6fa;
+}
+
+.quiz-option.correct {
+  background-color: #d3f8d3;
+  border-color: #2e7d32;
+}
+
+.quiz-option.incorrect {
+  background-color: #f8d3d3;
+  border-color: #c62828;
+}
+
+.quiz-feedback {
+  margin-top: 1rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.quiz-next-button {
+  margin-top: 1.5rem;
+  align-self: flex-end;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #187e9b;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.quiz-next-button:hover {
+  background-color: #14677d;
+}
