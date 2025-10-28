@@ -151,6 +151,28 @@ foreach ($svc in $services) {
 
     Start-Process powershell -ArgumentList "-NoExit", "-Command", $cmd -WindowStyle Normal
     Write-Host "[OK] $title iniciado na porta $port." -ForegroundColor Green
+
+    # Aguarda endpoint /health do serviço ficar disponível (até timeout em segundos)
+    $maxWait = 30
+    $wait = 0
+    $healthy = $false
+    while ($wait -lt $maxWait) {
+        try {
+            $url = "http://localhost:$port/health"
+            $resp = Invoke-WebRequest $url -UseBasicParsing -TimeoutSec 2 -ErrorAction Stop
+            if ($resp.StatusCode -eq 200) {
+                Write-Host "[HEALTH] $title respondeu /health." -ForegroundColor Green
+                $healthy = $true
+                break
+            }
+        } catch {
+            Start-Sleep -Seconds 1
+            $wait++
+        }
+    }
+    if (-not $healthy) {
+        Write-Host "[WARN] $title não respondeu /health após $maxWait segundos. Prosseguindo..." -ForegroundColor Yellow
+    }
 }
 
 Write-Host "Todos os serviços backend foram iniciados!" -ForegroundColor Green
