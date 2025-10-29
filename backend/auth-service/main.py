@@ -4,7 +4,8 @@ import sys
 from pathlib import Path
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel, EmailStr
+from pydantic import BaseModel
+from email_validator import validate_email, EmailNotValidError, EmailUndeliverableError
 
 # Configuração do path para imports
 parent_dir = Path(__file__).parent.parent
@@ -33,11 +34,11 @@ auth_service = AuthService()
 # ===== MODELOS Pydantic =====
 
 class LoginRequest(BaseModel):
-    email: EmailStr
+    email:  str
     password: str
 
 class RegisterRequest(BaseModel):
-    email: EmailStr
+    email: str
     password: str
     name: str
 
@@ -46,7 +47,14 @@ class RegisterRequest(BaseModel):
 @app.post("/auth/login")
 async def login(request: LoginRequest):
     #Login de usuário - mapeia Logincard
-    user_data = await auth_service.authenticate_user(request.email, request.password)
+    # Validação/normalização do e-mail em dev (não checar deliverability)
+    try:
+        ve = validate_email(request.email, check_deliverability=False)
+        email_norm = ve.email
+    except (EmailNotValidError, EmailUndeliverableError, ValueError) as e:
+        raise HTTPException(status_code=400, detail=f"E-mail inválido: {e}")
+
+    user_data = await auth_service.authenticate_user(email_norm, request.password)
 
     if not user_data:
         raise HTTPException(status_code=401, detail="Credenciais inválidas")
@@ -65,8 +73,15 @@ async def login(request: LoginRequest):
 @app.post("/auth/register")
 async def register(request: RegisterRequest):
     #Registro de novo usuário
+    # Validação/normalização do e-mail em dev (não checar deliverability)
+    try:
+        ve = validate_email(request.email, check_deliverability=False)
+        email_norm = ve.email
+    except (EmailNotValidError, EmailUndeliverableError, ValueError) as e:
+        raise HTTPException(status_code=400, detail=f"E-mail inválido: {e}")
+
     result = await auth_service.create({
-        "email": request.email,
+        "email": email_norm,
         "password": request.password,
         "name": request.name
     })
@@ -75,6 +90,26 @@ async def register(request: RegisterRequest):
         raise HTTPException(status_code=400, detail=result.error)
 
     return result.data
+
+
+@app.post("/auth/avatar")
+async def set_avatar(payload: dict):
+    # Atualiza avatar do usuário (recebe { token, avatar })
+    token = payload.get('token') if isinstance(payload, dict) else None
+    avatar = payload.get('avatar') if isinstance(payload, dict) else None
+
+    if not token or not avatar:
+        raise HTTPException(status_code=400, detail="token e avatar são obrigatórios")
+
+    user_data = await auth_service.validate_token(token)
+    if not user_data:
+        raise HTTPException(status_code=401, detail="Token inválido")
+
+    result = await auth_service.update(user_data['user_id'], { 'avatar': avatar })
+    if not result.success:
+        raise HTTPException(status_code=400, detail=result.error)
+
+    return { 'success': True, 'user': result.data, 'message': 'Avatar atualizado' }
 
 @app.post("/auth/logout")
 async def logout(token: str):

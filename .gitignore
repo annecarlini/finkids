@@ -27,3 +27,6 @@ dist-ssr
 __pycache__/
 *.py[cod]
 .venv/
+
+# Backend auth-service persisted users (dev only)
+backend/auth-service/users.json
