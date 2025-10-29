@@ -1,55 +1,115 @@
-import { useState, useEffect } from "react";
-import stepsDataPhase1 from "../../data/Phase1/stepsDataPhase1.json";
+import { useEffect, useState } from "react";
 import { Quiz } from "./Quiz";
 import "./QuizController.css";
 
-interface QuizControllerProps {
-  onStepChange?: (currentStep: number, totalSteps: number) => void;
+interface StepText {
+  id: number;
+  tipo: "texto";
+  titulo?: string;
+  conteudo: string;
 }
 
-export function QuizController({ onStepChange }: QuizControllerProps) {
-  const [currentStep, setCurrentStep] = useState(0);
-  const step = stepsDataPhase1[currentStep];
-  const totalSteps = stepsDataPhase1.length;
+interface StepQuiz {
+  id: number;
+  tipo: "quiz";
+  quizId: string;
+}
 
-  const [lastQuizScore, setLastQuizScore] = useState<number | null>(null);
+type Step = StepText | StepQuiz;
 
-  const handleNext = (quizScore?: number) => {
-    // se houver pontuação de quiz, atualiza o último score
-    if (quizScore !== undefined) {
-      setLastQuizScore(quizScore);
-    }
+interface QuizControllerProps {
+  phaseId: string; // ex: "Phase1" ou "Phase2"
+  onStepChange?: (currentStep: number, totalSteps: number) => void;
+  onPhaseFinish?: (totalScore: number) => void;
+}
+
+export function QuizController({
+  phaseId,
+  onStepChange,
+  onPhaseFinish,
+}: QuizControllerProps) {
+  const [steps, setSteps] = useState<Step[]>([]);
+  const [currentStep, setCurrentStep] = useState<number>(0);
+  const [scoreHistory, setScoreHistory] = useState<number[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  // Carrega stepsData dinamicamente conforme phaseId
+  useEffect(() => {
+    setLoading(true);
+    setSteps([]);
+    setCurrentStep(0);
+    setScoreHistory([]);
+
+    import(`../../data/${phaseId}/stepsData${phaseId}.json`)
+      .then((module) => {
+        const data = module.default as Step[];
+        setSteps(data);
+      })
+      .catch((err) => {
+        console.error("Erro ao carregar steps da fase:", phaseId, err);
+        setSteps([]);
+      })
+      .finally(() => setLoading(false));
+  }, [phaseId]);
+
+  const totalSteps = steps.length;
+
+  // informa o pai sobre mudança de step
+  useEffect(() => {
+    onStepChange?.(currentStep, totalSteps);
+  }, [currentStep, totalSteps, onStepChange]);
+
+  const handleNext = (points: number = 0) => {
+    // registra pontos do step (quiz retorna pontos, textos passam 0)
+    setScoreHistory((prev) => [...prev, points]);
 
     if (currentStep < totalSteps - 1) {
-      setCurrentStep(currentStep + 1);
+      setCurrentStep((s) => s + 1);
+    } else {
+      // fase finalizada
+      const total = scoreHistory.reduce((a, b) => a + b, 0) + points;
+      onPhaseFinish?.(total);
+      // você pode escolher manter o histórico ou resetar
     }
   };
 
-  useEffect(() => {
-    onStepChange?.(currentStep, totalSteps);
-  }, [currentStep, totalSteps]);
+  if (loading) return <p>Carregando fase...</p>;
+  if (steps.length === 0) return <p>Não há conteúdo para esta fase.</p>;
+
+  const step = steps[currentStep];
+
+  // Segurança: se for quiz e não tiver quizId, evita crash
+  if (step.tipo === "quiz" && !("quizId" in step)) {
+    console.error("Step do tipo quiz sem quizId:", step);
+    return <p>Erro no step do quiz (falta quizId).</p>;
+  }
 
   return (
     <div className="quiz-controller">
       {step.tipo === "texto" && (
         <div className="quiz-text">
+          {step.titulo && <h3 className="quiz-tittle">{step.titulo}</h3>}
           <p className="quiz-content">{step.conteudo}</p>
-          <button className="quiz-next-button" onClick={() => handleNext()}>
+          <button
+            className="quiz-next-button"
+            onClick={() => handleNext(0)} // texto não soma pontos
+          >
             Próximo
           </button>
         </div>
       )}
 
-      {step.tipo === "quiz" && step.quizId && (
-        <Quiz key={step.id} quizId={step.quizId} onFinish={(score) => handleNext(score)} />
+      {step.tipo === "quiz" && "quizId" in step && (
+        <Quiz
+          key={step.id}
+          phaseId={phaseId}
+          quizId={step.quizId}
+          onFinish={(points) => handleNext(points)}
+        />
       )}
 
-      {/* Mostra pontuação do último quiz se existir */}
-      {lastQuizScore !== null && (
-        <div className="quiz-score">
-          <p>Você marcou {lastQuizScore} ponto{lastQuizScore > 1 ? "s" : ""} neste quiz!</p>
-        </div>
-      )}
+      {/* Exemplo de histórico simples (opcional) */}
+      {/* {scoreHistory.length > 0 && <div>Histórico: {scoreHistory.join(", ")}</div>} */}
     </div>
   );
 }

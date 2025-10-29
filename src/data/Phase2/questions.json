@@ -1,0 +1,74 @@
+[
+    {
+        "id": 1,
+        "quizId": "quiz1", 
+        "pergunta": "A Reserva de Emergência deve ser aplicada em investimentos de Alto Risco (como ações), pois o objetivo é multiplicar o dinheiro rapidamente. Essa afirmação é",
+        "opcoes": [
+            "Verdadeira, quanto mais risco, mais o dinheiro cresce para a emergência.", 
+            "Falsa, a Reserva deve ser aplicada em investimentos de Baixo Risco e Alta Liquidez, priorizando a segurança.",
+            "Verdadeira, mas apenas se a família tiver muitos meses de despesas guardadas.", 
+            "Todas as alternativas estão corretas."
+        ], 
+        "reposta_correta": "Falsa, a Reserva deve ser aplicada em investimentos de Baixo Risco e Alta Liquidez, priorizando a segurança."
+    }, 
+    {
+        "id": 2, 
+        "quizId": "quiz2", 
+        "pergunta": "O que acontece quando uma família não possui uma Reserva de Emergência e precisa lidar com um imprevisto, por exemplo: um eletrodoméstico quebrado?", 
+        "opcoes": [
+            "A família simplesmente adia a resolução do problema para o próximo mês, sem grandes consequências.",
+            "A família é forçada a usar ferramentas de alto custo (como cartão de crédito ou empréstimos), transformando a crise em uma dívida de longo prazo.",
+            "Os amigos e parentes são legalmente obrigados a ajudar a cobrir a despesa inesperada.",
+            "Nada, pois a reserva de emergência não tem importância no orçamento familiar."
+        ],
+        "reposta_correta": "A família é forçada a usar ferramentas de alto custo (como cartão de crédito ou empréstimos), transformando a crise em uma dívida de longo prazo."
+    }, 
+    {
+        "id": 3, 
+        "quizId": "quiz3", 
+        "pergunta": "Por que a Reserva de Emergência deve ser aplicada em investimentos de Baixo Risco, e não em opções que prometem lucros rápidos, mas incertos?", 
+        "opcoes":[
+            "Porque o objetivo dela é garantir que a família não gaste o dinheiro com Desejos.", 
+            "Porque o foco da Reserva é proteger o valor principal e evitar a chance de perder o dinheiro em um momento de necessidade.", 
+            "Porque a Reserva de Emergência só cresce se não for resgatada no mesmo dia.", 
+            "Garantia de dinheiro mais rápido."
+        ], 
+        "reposta_correta": "Porque o foco da Reserva é proteger o valor principal e evitar a chance de perder o dinheiro em um momento de necessidade."
+    }, 
+    {
+        "id": 4, 
+        "quizId": "quiz4", 
+        "pergunta": "Por que a Reserva de Emergência deve ser Intocável (usada apenas para imprevistos reais) e ter Alta Liquidez?",
+        "opcoes": [
+            "Porque, se for usada para um desejo (ex: um show), você terá que pagar mais impostos e o dinheiro não terá tempo de crescer.",
+            "Porque, ao ser usada em desejos, o dinheiro não estará disponível de forma imediata quando uma emergência real acontecer, forçando a família a recorrer a dívidas caras.",
+            "Porque, se o dinheiro for resgatado rapidamente, o investimento perde o Baixo Risco e se torna Alto Risco.", 
+            "Despesas variáveis devem ser sempre maiores que as despesas fixas."
+        ], 
+        "reposta_correta": "Porque, ao ser usada em desejos, o dinheiro não estará disponível de forma imediata quando uma emergência real acontecer, forçando a família a recorrer a dívidas caras."
+    }, 
+    {
+        "id": 5, 
+        "quizId": "quiz5", 
+        "pergunta": "Se você usa o dinheiro da Reserva de Emergência para comprar um celular novo em promoção, você compromete qual característica fundamental da Reserva?",
+        "opcoes":[
+            "A Renda (Entrada).",
+            "A Liquidez (Acesso Rápido).",
+            "O Foco (Intocabilidade) e a Segurança do plano financeiro familiar.",
+            "Toda as alteranativas estão corretas."
+        ], 
+        "reposta_correta":"O Foco (Intocabilidade) e a Segurança do plano financeiro familiar."
+    }, 
+    {
+        "id": 6,
+        "quizId": "quiz6",
+        "pergunta": "Se a família tem um custo de vida mensal de R$ 3.000,00, qual é o valor mínimo recomendado para a Reserva de Emergência?",
+        "opcoes":[
+            "R$ 3.000,00 (1 mês de despesas).",
+            "R$ 9.000,00 (3 meses de despesas).",
+            "R$ 18.000,00 (6 meses de despesas).",
+            "r$ 6.000,00 (2 meses de despesas)."
+        ], 
+        "reposta_correta": "R$ 18.000,00 (6 meses de despesas)."
+    }
+]

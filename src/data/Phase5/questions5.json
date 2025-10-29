@@ -1,0 +1,74 @@
+[
+    {
+        "id": 1,
+        "quizId": "quiz1", 
+        "pergunta": "Imagine que vocÊ ganha uma mesada todo mÊs, mas neste mês também vendeu um brinquedo antigo e ainda ganhou um presetnte em dinheiro de um parente. Pensando nas três situações, qual tipo de renda NÃO faz parte da sua rotina e acontece raramente?",
+        "opcoes": [
+            "Renda Fixa", 
+            "Renda Variável",
+            "Renda Exraordinária", 
+            "Renda Mensal"
+        ], 
+        "reposta_correta": "Renda extraordinária"
+    }, 
+    {
+        "id": 2, 
+        "quizId": "quiz2", 
+        "pergunta": "A conta de água e luz são classificadas como despesas variáveis. Porque?", 
+        "opcoes": [
+            "Elas são caras.",
+            "Os valores mudam de acordo com o consumo da familia.",
+            "São pagas apenas uma vez ao ano.",
+            "Possuem o mesmo valor todo mês."
+        ],
+        "reposta_correta": "Os valores mudam de acordo com o consumo da familia."
+    }, 
+    {
+        "id": 3, 
+        "quizId": "quiz3", 
+        "pergunta": "Qual é a principal função do Orçamento como um plano de ação?", 
+        "opcoes":[
+            "Apenas anotas as compras que já foram feitas.", 
+            "Prever e controlar os gastos futuros para garantir que as receitas cubram as despesas.", 
+            "Saber exatamente quanto dinheiro seus pais ganham.", 
+            "Poupar mais."
+        ], 
+        "reposta_correta": "Prever e controlar os gastos futuros para garantir que as receitas cubram as despesas."
+    }, 
+    {
+        "id": 4, 
+        "quizId": "quiz4", 
+        "pergunta": "Qual é a Regra de Ouro para um orçamento saudável?",
+        "opcoes": [
+            "Gastar 50% em necessidades e 50% em desejos.",
+            "Renda deve ser sempre maior ou igual às despesas",
+            "Despesas fixas devem ser sempre maiores que as despesas variáveis.", 
+            "Despesas variáveis devem ser sempre maiores que as despesas fixas."
+        ], 
+        "reposta_correta": "Despesas fixas devem ser sempre maiores que as despesas variáveis."
+    }, 
+    {
+        "id": 5, 
+        "quizId": "quiz5", 
+        "pergunta": "Usar o orçamento como uma ferramenta de antecipação significa que você:",
+        "opcoes":[
+            "Esperar o final do mês para ver se sobrou dinheiro.",
+            "Pode prever um gasto alto e se planejar para economizar em outras áreas antes que ele aconteça.",
+            "Precisar anotas apenas as adespesas variáveis, pois as fixas não mudam.",
+            "Eliminar todas as despesas variáveis."
+        ], 
+        "reposta_correta":"Pode prever um gasto alto e se planejar para economizar em outras áreas antes que ele aconteça."
+    }, 
+    {
+        "id": 6,
+        "quizId": "quiz6",
+        "pergunta": "Ao incluir o valor da sua poupança no orçamento, tratando-a como uma 'despesa' priori´taria, qual é o principal benefício dessa atitude?",
+        "opcoes":[
+            "Você garante que vai poder comprar algo por impulso.",
+            "Você transforma a poupança em um compromisso, garantindo que o dinheiro será reservado para suas metas futuras.",
+            "Você elimina todas as suas desepsas variáveis.",
+            "Você garante que vai poder gastar 50% em necessidades e 50% em desejos."
+        ], 
+        "reposta_correta": "Você transforma a poupança em um compromisso, garantindo que o dinheiro será reservado para suas metas futuras."
+    }
+]

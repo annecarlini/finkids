@@ -1,0 +1,56 @@
+[
+    {
+        "id": 1, 
+        "tipo": "texto", 
+        "titulo": "", 
+        "conteudo": "Poupar não é o ponto final, mas sim o primeiro passo de uma jornada. Para ser um bom gestor financeiro, é preciso entender a escada do crescimento. A saúde financeira se contrói em três etapas: \n 1. Economizar: É arte de gastar menos no dia a dia. Essa atitude cria uma 'sobra' no seu dia a dia.\n2. Poupar: É o ato de gastar menos do que se ganha, ou seja, guardar o dinheiro que seria usado em um consumo imediato. Você precisa construir a sua reserva de emergência para ter mais segurança finaceira. \n Investir: É dar um destino para o seu dinheiro. Você aplica o valor poupado em algum lugar que tem a chance de crescer, fazendo com que ele gere um rendimento para você (o famoso juro composto, veremos mais adiante). "
+    },
+    {
+        "id": 2,
+        "tipo": "quiz",
+        "quizId":"quiz1"
+    },
+    {
+        "id": 3,  
+        "tipo": "texto", 
+        "titulo": "",
+        "conteudo": "Reserva de Emergência é o pilar mais importante da sua segurança financeira, antes mesmo de pensar em grandes investimentos. Não é um luxo, é uma necessidade. \n Por exemplo, quando um imprevisto acontece: carro quebrar ou eletrodoméstico essencial estragar. \n Sem reserva: A família é obrigada  a usar o cartão de crédito ou a pegar um empréstimo. Isso transforma uma crise momentânea em uma dívida de longo prazo, comprometendo todo o orçamento futuro. \n Com Reserva: O dinheiro necessário é usado imediatamente e o problema é resolvido sem criar novas dívidas. A família mantém a tranquilidade e o plano financeiro segue no controle."
+    }, 
+    {
+        "id": 4,
+        "tipo": "quiz",
+        "quizId":"quiz2"
+    }, 
+    {
+        "id": 5,  
+        "tipo": "texto", 
+        "titulo": "",
+        "conteudo": "A Reserva de Emergência não pode ser guardada em qualquer lugar. Ela precisa ter três características:\n1.Segurança (Baixo risco): Objetivo dela não é gerar lucro alto, mas sim proteger o valor principal. Por isso, ela deve ser aplicada em investimentos muito seguros.\n2. Liquidez (Acesso Rápido): O dinheiro precisa estar disponível para ser resgatado a qualquer momento, sem perda de valor e, idealmente, no mesmo dia. Emergências não avisam!\n Intocável (Foco e Disciplina): O dinheiro da Reserva só pode ser usado para emergências reais (quebra de carro, doença, desemprego). Ele nunca deve ser usado para comprar um desejo, como um videogame ou uma roupa nova em promoção."
+    }, 
+    {
+        "id": 6, 
+        "tipo": "quiz",
+        "quizId": "quiz3"
+    }, 
+    {
+        "id": 7, 
+        "tipo": "quiz", 
+        "quizId": "quiz4"
+    }, 
+    {
+        "id": 8, 
+        "tipo": "texto", 
+        "titulo": "", 
+        "conteudo": "Para a maioria das famílias, a recomendação é ter guardado o equivalente a 6 meses de todos os custos essenciais (Despesas Fixas e Variáveis essenciais).\nExemplo: Se o custo de vida mensal da família é R$ 4.000, a Reserva de Emergência ideal deve ser R$ 4.000 x 6 = R$ 24.000,00.\nEssa quantia garante que, mesmo diante de uma crise, a família terá tempo para se reorganizar, buscar uma nova fonte de renda, ou cobrir um gasto grande sem se afundar em juros."
+    }, 
+    {
+        "id": 9, 
+        "tipo": "quiz", 
+        "quizId": "quiz5"
+    }, 
+    {
+        "id": 10,
+        "tipo": "quiz", 
+        "quizId": "quiz6"
+    }
+]

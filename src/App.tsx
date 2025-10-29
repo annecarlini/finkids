@@ -6,6 +6,7 @@ import Init from './pages/Chooseavatar/Init'
 import Phase from './pages/Phasespage/Phase';
 
 
+
 function App() {
 
   return (

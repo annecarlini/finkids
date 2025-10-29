@@ -18,8 +18,6 @@ function Phase() {
       <div className="phases">
         <h3 onClick={() => setSelectPhase(selectPhase === "Inicio" ? null : "Inicio")}>Inicio</h3>
         <h3 onClick={() => setSelectPhase(selectPhase === "Phase1" ? null : "Phase1")}>Fase 1</h3>
-        <h3 onClick={() => setSelectPhase(selectPhase === "Phase2" ? null : "Phase2")}>Fase 2</h3>
-        <h3 onClick={() => setSelectPhase(selectPhase === "Phase3" ? null : "Phase3")}>Fase 3</h3>
       </div>
 
       {selectPhase && (
@@ -27,19 +25,17 @@ function Phase() {
           <div className="card-progress2">
             <h2>
               {selectPhase === "Phase1" ? "Orçamento pessoal e familiar" : selectPhase}
-              {selectPhase === "Phase2" ? "Poupança Financeira" : selectPhase}
             </h2>
-
             <ProgressBar value={progressValue} />
           </div>
 
           <div className="card-quizz">
             <QuizController
-                phaseId={selectPhase}
-                onStepChange={(currentStep: number, totalSteps: number) => {
-                  setProgressValue(((currentStep + 1) / totalSteps) * 100);
-                }}
-              />
+              phaseId={selectPhase} // PASSANDO O ID DA FASE
+              onStepChange={(currentStep: number, totalSteps: number) => {
+                setProgressValue(((currentStep + 1) / totalSteps) * 100);
+              }}
+            />
           </div>
         </>
       )}

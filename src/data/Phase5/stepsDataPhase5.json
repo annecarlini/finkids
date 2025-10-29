@@ -2,7 +2,7 @@
     {
         "id": 1, 
         "tipo": "texto", 
-        "titulo": "", 
+        "titulo": "Orçamento pessoal e familiar", 
         "conteudo": "O orçamento é o registro que detalha exatamente de onde o seu dinheiro vem e para onde ele vai. Se você não tem esse controle, corre o risco de gastar demais sem perceber e não alcançar seus objetivos. \n Renda Fixa: É o dinheiro garantido e que chega sempre. Um exemplo é a sua mesada (sempre na mesma quantia e data) \n Renda Variável: O dinheiro extra que chega de vez em quando e pode mudar o valor. Presentes de aniversário, bônus por notas boas, vender um brinquedo antigo. \n Renda extraordinária: Dinheiro que chega muito raramente e em grande quantia. Não faz parte da sua rotina. Um presente muito grane de um parente, um valor inesperado que seus pais recebem (herança ou bônus anual). "
     },
     {
@@ -13,7 +13,7 @@
     {
         "id": 3,  
         "tipo": "texto", 
-        "titulo": "",
+        "titulo": "Despesas",
         "conteudo": "Quando pensamos em dinheiro, o ato de gastar é o mais comum, mas é essencial entender que nem todo gasto é igual. Para ter um orçamento organizado, você precisa diferenciar suas despesas em dois grandes grupos: as Fixas e as Variáveis. \n Despesas Fixas: Os compromissos da rotina > Imagine as despesas fixas como os compromissos agendados do seu orçamento. Elas tÊm um valor que quase não muda ou muda de forma previsível (como um pequeno aumento anual). São custos que a familia assume para manter sua estrutura básica. \n Despesas variáveis: O poder da escolha >  As depesas variáveis, ao contrário, são os gastos que você tem controle sobre o valor final. Elas mudam muito de um mês para o outro, dependendo das suas escolhas e hábitos de consumo. \n Entender a diferença é o primeiro passo para o controle financeiro. Você pode cortar a despesa fixa facilmente, mas pode controlar, planejar e reduzir as depesas variáveis. É nelas que reside a maior oportunidade de economia e de ajuste do orçamento para que o dinheiro não falte. "
     }, 
     {
@@ -24,7 +24,7 @@
     {
         "id": 5,  
         "tipo": "texto", 
-        "titulo": "",
+        "titulo": "Orçamento como um plano",
         "conteudo": "O verdadeiro poder do orçamento está em usá-lo como um plano de ação. Ele é o mapa que indica se o dinheiro que entra será suficiente para apgar suas contas e, mais importante, para alcançar seus objetivos, sejam eles comprar um jogo, fazer uma viagem em família ou planejar a faculdade.\n A regra de ouro do equilibrio: \n Renda ≥ Despesas \n Se o resultado for positivo, você pode direcionar essa sobra para Poupança e os Investimentos. Se o resultado for negativo, significa que você está gastando mais do que ganha, e isso leva ao endividamento e à frustração dos seus objetivos. "
     }, 
     {
@@ -40,7 +40,7 @@
     {
         "id": 8, 
         "tipo": "texto", 
-        "titulo": "", 
+        "titulo": "A ferramenta da antecipação", 
         "conteudo": "O orçamento é uma ferramenta da antecipação. Em vez de se surpreender com as contas no final do mês, você usa o plano para: \n Priorizar: Decidir que as despesas essenciais (contas fixas e variáveis) vêm em primeiro lugar. \n Ajustar: Se o plano mostrar que você vai gastar R$50,00 a mais em lazer este mês, você pode se antecipar e cortar R$50,00 de outro gasto, garantindo o equilibrio. \n Realizar metas: Você pode incluir a poupança como uma despesa prioriátia no seu orçamento. Assim, você garante que está investindo em suas metas antes de gastar com coisas que não são essenciais."
     }, 
     {
