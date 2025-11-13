@@ -1,5 +1,0 @@
-# Auth Service - Dependências
-fastapi==0.104.1        #framework web/rotas/validações
-uvicorn[standard]==0.24.0       #executador app
-pydantic==2.4.2         # dependência para email string, usada em main.py
-python-multipart==0.0.6     #parsing de formulário
